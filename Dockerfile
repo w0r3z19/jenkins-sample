@@ -1,8 +1,10 @@
-FROM golang:1.10.4-alpine
+FROM hub.atomgit.com/amd64/golang:1.19.13
 
 ADD . /go/src/app
 
 WORKDIR /go/src/app
+
+RUN go mod init
 
 RUN  go build -v -o /go/src/app/jenkins-app
 
